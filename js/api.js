@@ -35,9 +35,9 @@ const api = {
             // Handle session timeout / unauthorized
             if (response.status === 401 || response.status === 403) {
                 // If we are not already on the login page, clear token and redirect
-                if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/frontend/") {
+                if (!window.location.pathname.endsWith("index.html") && !window.location.pathname.endsWith("/")) {
                     this.clearToken();
-                    window.location.href = "/frontend/index.html";
+                    window.location.href = "index.html";
                 }
             }
 
