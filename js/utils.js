@@ -5,7 +5,7 @@ const utils = {
     authGuard() {
         const token = localStorage.getItem("jwt_token");
         if (!token) {
-            window.location.href = "/frontend/index.html";
+            window.location.href = "index.html";
             return;
         }
 
@@ -16,7 +16,7 @@ const utils = {
         if (role === "TRAVELER" && path.includes("packages.html")) {
             utils.showToast("Access Denied: Travelers cannot manage packages", "error");
             setTimeout(() => {
-                window.location.href = "/frontend/dashboard.html";
+                window.location.href = "dashboard.html";
             }, 1000);
         }
     },
@@ -180,8 +180,9 @@ const utils = {
         if (logoutBtn) {
             logoutBtn.onclick = () => {
                 localStorage.clear();
-                window.location.href = "/frontend/index.html";
+                window.location.href = "index.html";
             };
         }
     }
 };
+
