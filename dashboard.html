@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTrek — Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <h2>🌍 TravelTrek</h2>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="dashboard.html">📊 Dashboard</a></li>
+            <li><a href="packages.html">📦 Packages</a></li>
+            <li><a href="itineraries.html">🗺️ Itineraries</a></li>
+            <li><a href="reservations.html">🎫 Reservations</a></li>
+            <li><a href="activities.html">🎯 Activities</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button id="logoutBtn" class="logout-btn">
+                <span>🚪 Sign Out</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Dashboard Statistics</h1>
+            <div class="user-info">
+                <span>Logged in as: <strong id="headerUsername">User</strong></span>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="label">Total Packages</span>
+                <span id="packagesCount" class="value">0</span>
+            </div>
+            
+            <div class="stat-card">
+                <span class="label">Total Itineraries</span>
+                <span id="itinerariesCount" class="value">0</span>
+            </div>
+            
+            <div class="stat-card">
+                <span class="label">Total Bookings</span>
+                <span id="reservationsCount" class="value">0</span>
+            </div>
+            
+            <div class="stat-card">
+                <span class="label">Total Activities</span>
+                <span id="activitiesCount" class="value">0</span>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3 class="form-title">Welcome to TravelTrek Backend Console</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem;">
+                Use the left-hand navigation sidebar to manage all the entity data stored in the database. 
+                You can create, search, edit, and delete travel packages, itineraries, reservations, and activities in real-time.
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

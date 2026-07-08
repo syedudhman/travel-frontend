@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTrek — Travel Packages</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <h2>🌍 TravelTrek</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">📊 Dashboard</a></li>
+            <li class="active"><a href="packages.html">📦 Packages</a></li>
+            <li><a href="itineraries.html">🗺️ Itineraries</a></li>
+            <li><a href="reservations.html">🎫 Reservations</a></li>
+            <li><a href="activities.html">🎯 Activities</a></li>
+            <li><a href="profile.html">👤 Profile</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <button id="logoutBtn" class="logout-btn">
+                <span>🚪 Sign Out</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Travel Packages Management</h1>
+            <div class="user-info">
+                <span>Logged in as: <strong id="headerUsername">User</strong></span>
+            </div>
+        </div>
+
+        <!-- Add/Edit Form -->
+        <div class="form-card">
+            <h3 class="form-title" id="formTitle">Add New Travel Package</h3>
+            <form id="packageForm">
+                <input type="hidden" id="packageId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="packageName">Package Name</label>
+                        <input type="text" id="packageName" placeholder="e.g., Bali Paradise Getaway" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="e.g., Bali, Indonesia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price (USD)</label>
+                        <input type="number" id="price" step="0.01" min="0" placeholder="e.g., 1200.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="durationDays">Duration (Days)</label>
+                        <input type="number" id="durationDays" min="1" placeholder="e.g., 7" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="description">Description</label>
+                        <textarea id="description" placeholder="Provide detailed description of the travel package..." maxlength="1000"></textarea>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" id="cancelBtn" class="btn btn-secondary">Clear / Cancel</button>
+                    <button type="submit" id="saveBtn" class="btn btn-primary">Save Package</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Packages Table Section -->
+        <div class="table-section">
+            <div class="table-header">
+                <h3 class="form-title" style="margin-bottom: 0;">Existing Travel Packages</h3>
+                <div class="search-input-container">
+                    <input type="text" id="searchInput" placeholder="🔍 Search packages or destinations...">
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Package Name</th>
+                            <th>Destination</th>
+                            <th>Price</th>
+                            <th>Duration</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packagesTableBody">
+                        <!-- Loaded dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/packages.js"></script>
+</body>
+</html>

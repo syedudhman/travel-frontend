@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelTrek — Register</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>🌍 TravelTrek</h1>
+                <p>Create a new account to get started.</p>
+            </div>
+            
+            <form id="registerForm">
+                <div class="form-grid" style="grid-template-columns: 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="john@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">System Role</label>
+                        <select id="role" required>
+                            <option value="TRAVELER">Traveler</option>
+                            <option value="TRAVEL_AGENT">Travel Agent</option>
+                            <option value="AGENCY_MANAGER">Agency Manager</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-group" style="padding-top: 0.5rem;">
+                        <input type="checkbox" id="active" checked>
+                        <label for="active">Activate Account immediately</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; justify-content: center;">
+                    Create Account
+                </button>
+            </form>
+
+            <div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem;">
+                <span style="color: var(--text-secondary);">Already have an account?</span>
+                <a href="index.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none; margin-left: 0.25rem;">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/api.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
