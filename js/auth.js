@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (loginForm) {
         // If user already logged in, send them to dashboard
         if (localStorage.getItem("jwt_token")) {
-            window.location.href = "/frontend/dashboard.html";
+            window.location.href = "dashboard.html";
             return;
         }
 
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("user_email", email);
                     localStorage.setItem("user_role", response.role);
                     localStorage.setItem("user_id", response.id);
-                    window.location.href = "/frontend/dashboard.html";
+                    window.location.href = "dashboard.html";
                 } else {
                     utils.showToast("Failed to retrieve authentication token.", "error");
                 }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     utils.showToast("Account created successfully! Please login.", "success");
                     // Wait a bit for toast to show before redirecting
                     setTimeout(() => {
-                        window.location.href = "/frontend/index.html";
+                        window.location.href = "index.html";
                     }, 1500);
                 } else {
                     utils.showToast("Failed to register account.", "error");
@@ -66,3 +66,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
